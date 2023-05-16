@@ -16,8 +16,8 @@ MongoClient.connect(process.env.RESTREVIEWS_DB_URI, {
 })
   .catch((err) => {
     console.error(err.stack);
-    process.exit(1);// Exit the process with an error code of 1
-  })                //so the server wont start below.
+    process.exit(1);
+  })                
   .then(async (client) => {
     await RestaurantsDAO.injectDB(client);
     await ReviewsDAO.injectDB(client);
